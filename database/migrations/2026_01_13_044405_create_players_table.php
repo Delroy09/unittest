@@ -9,6 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    //published on github
     public function up(): void
     {
         Schema::create('players', function (Blueprint $table) {
@@ -18,7 +19,6 @@ return new class extends Migration
             $table->string('phone');
             $table->string('password');
             $table->timestamps();
-            
         });
     }
 
