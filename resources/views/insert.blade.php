@@ -7,6 +7,12 @@
     <title>Create Page</title>
 </head>
 <link rel="stylesheet" href="add.css">
+<nav>
+    <li><a href="/">C - Create</a></li>
+    <li><a href="/players">R - Read</a></li>
+    <li>U - Update (click Edit on a player)</li>
+    <li>D - Delete (click Delete on a player)</li>
+</nav>
 
 <body>
     <h1>Insert into Database</h1>

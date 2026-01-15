@@ -12,6 +12,9 @@ Route::get('/', function () {
     return view('insert');
 });
 
+
+
+
 Route::post('/insert', [PlayersController::class, 'store'])->name('players.store');
 
 Route::get('/players', [PlayersController::class, 'index'])->name('players.index');

@@ -12,3 +12,12 @@ input {
 h1 {
     text-transform: uppercase;
 }
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(189, 155, 98);
+    border-radius: 12px;
+    margin: 12px;
+    padding: 12px;
+}
