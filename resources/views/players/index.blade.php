@@ -9,10 +9,11 @@
 
 <body>
     <h1>Players Database</h1>
+    <p><a href="/">Go Back</a></p>
+    <br><br>
 
-    <p><a href="/">Add New Player</a></p>
 
-    <table>
+    <table border="2">
         <thead>
             <tr>
                 <th>ID</th>
@@ -32,8 +33,11 @@
                 <td>{{ $player->email }}</td>
                 <td>{{ $player->phone }}</td>
                 <td>{{ $player->password }}</td>
-                <td>{{ $player->created_at->format('Y-m-d H:i') }}</td>
+                <td>{{ $player->created_at }} </td>
                 <td>
+
+
+
                     <a href="{{ route('players.edit', $player) }}">Edit</a>
 
                     <form action="{{ route('players.destroy', $player) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this player?')">
@@ -45,7 +49,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="7" style="text-align: center;">No players found. Add some players first.</td>
+                <td colspan="7" style="text-align: center;">No players found. Insert some <a href="/">Here</a>.</td>
             </tr>
             @endforelse
         </tbody>
