@@ -12,21 +12,17 @@ class PlayersController extends Controller
      */
     public function index()
     {
-
-        $players = Players::orderByDesc('id')->get();
+        $players = Players::latest()->get();
         return view('players.index', compact('players'));
     }
 
     public function store(Request $request)
     {
-
-        $data =  $request->validate([
-
-            'name' => 'required|string',
-            'email' => 'required|string',
+        $data = $request->validate([
+            'name' => 'required|max:30',
+            'email' => 'required|max:30',
             'phone' => 'required|integer',
-            'password' => 'required|string',
-
+            'password' => 'required|max:30',
         ]);
 
         Players::create($data);
@@ -52,27 +48,25 @@ class PlayersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Players $players)
+    public function update(Request $request, Players $player)
     {
-        $data =  $request->validate([
-
-            'name' => 'required|string',
-            'email' => 'required|string',
+        $data = $request->validate([
+            'name' => 'required|max:30',
+            'email' => 'required|max:30',
             'phone' => 'required|integer',
-            'password' => 'required|string',
-
+            'password' => 'required|max:30',
         ]);
 
-        $players->update($data);
+        $player->update($data);
         return redirect()->route('players.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Players $players)
+    public function destroy(Players $player)
     {
-        $players->delete();
+        $player->delete();
         return redirect()->route('players.index');
     }
 }
