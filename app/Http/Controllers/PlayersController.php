@@ -40,9 +40,9 @@ class PlayersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Players $players)
+    public function edit(Players $player)
     {
-        //
+        return view('players.edit', compact('player'));
     }
 
     /**
