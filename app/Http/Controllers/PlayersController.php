@@ -8,14 +8,8 @@ use Illuminate\Http\Request;
 class PlayersController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Store a newly created resource in storage.
      */
-    public function index()
-    {
-        $players = Players::latest()->get();
-        return view('players.index', compact('players'));
-    }
-
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -30,11 +24,12 @@ class PlayersController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display a listing of the resource.
      */
-    public function show(Players $players)
+    public function index()
     {
-        //
+        $players = Players::latest()->get();
+        return view('players.index', compact('players'));
     }
 
     /**
